@@ -1,0 +1,139 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-betweens;
+  height: 50%;
+  margin-top: 2%;
+}
+
+.num-of-keyphrase-container {
+  display: flex;
+  margin: auto;
+  margin-top: 2%;
+  width: 80%;
+}
+
+.first {
+  width: 40%;
+}
+
+.second {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.btn-container {
+  margin-top: 2%;
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* Base Styles */
+.submit-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(to bottom, #3498db, #2980b9);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Hover Effect */
+.submit-button:hover {
+  background: linear-gradient(to bottom, #2980b9, #3498db);
+}
+
+/* Hide default radio button styles */
+.radio-container input[type="radio"] {
+  display: none;
+}
+
+/* Style for the custom radio button */
+.radio-container .custom-radio {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px; /* Adjust this value to change the radio button size */
+  /* margin-right: 10px; */
+  cursor: pointer;
+}
+
+/* The radio button indicator dot */
+.radio-container .custom-radio::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px; /* Adjust this value to change the dot size */
+  height: 20px; /* Should be the same as width for a circular dot */
+  border: 2px solid #3498db; /* Border color for the dot */
+  background-color: #ffffff; /* Background color for the dot */
+  border-radius: 50%; /* Makes it a circle */
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Style for the label text */
+.radio-container label {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 16px;
+  color: #333333;
+  cursor: pointer;
+}
+
+/* Change the radio button indicator when checked */
+.radio-container input[type="radio"]:checked + .custom-radio::before {
+  border-color: #3498db; /* Border color when checked */
+  background-color: #3498db; /* Background color when checked */
+}
+
+/* Hover effect for the radio button */
+.radio-container .custom-radio:hover::before {
+  border-color: #2980b9; /* Border color on hover */
+}
+
+/* Optional: Focus styles */
+.radio-container input[type="radio"]:focus + .custom-radio::before {
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.7);
+}
+
+.container-text {
+  width: 100%;
+}
+
+.label {
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #3498db;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.result {
+  margin: auto;
+  margin-bottom: 2%;
+  height: 40%;
+  width: 80%;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 2px solid #3498db; /* Border color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow */
+}
