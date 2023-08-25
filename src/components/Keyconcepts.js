@@ -6,6 +6,7 @@ export default function KeyConcept() {
   const [values, setValues] = useState({
     text: "",
     maximumNumOfWords: "0",
+    numOfKeywords: "20",
   });
   const [response, setResponse] = useState(undefined);
   function handleChange(e) {
@@ -22,6 +23,7 @@ export default function KeyConcept() {
     const result = await axios.post("http://localhost:3019/keyConcepts", {
       text: values.text,
       maximumNumOfWords: parseInt(values.maximumNumOfWords),
+      numOfKeywords: parseInt(values.numOfKeywords),
     });
 
     setResponse(result.data);
@@ -89,6 +91,57 @@ export default function KeyConcept() {
               </div>
             </div>
           </div>
+
+          <div className="num-of-keyphrase-container">
+            <div className="first">
+              <label className="label" htmlFor="numOfKeywords">
+                Number of keywords for each keyphrase:
+              </label>
+            </div>
+
+            <div className="second">
+              <div className="radio-container">
+                <input
+                  type="radio"
+                  name="numOfKeywords"
+                  value={5}
+                  id="5"
+                  checked={values.numOfKeywords === "5"}
+                  onChange={handleChange}
+                />
+                <label htmlFor="5" className="custom-radio">
+                  5
+                </label>
+              </div>
+              <div className="radio-container">
+                <input
+                  type="radio"
+                  name="numOfKeywords"
+                  value={10}
+                  id="10"
+                  checked={values.numOfKeywords === "10"}
+                  onChange={handleChange}
+                />
+                <label htmlFor="10" className="custom-radio">
+                  10
+                </label>
+              </div>
+              <div className="radio-container">
+                <input
+                  type="radio"
+                  name="numOfKeywords"
+                  value={20}
+                  id="20"
+                  checked={values.numOfKeywords === "20"}
+                  onChange={handleChange}
+                />
+                <label htmlFor="20" className="custom-radio">
+                  20
+                </label>
+              </div>
+            </div>
+          </div>
+
           <div className="btn-container">
             <button className="submit-button" type="submit">
               Submit

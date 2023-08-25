@@ -73,6 +73,9 @@
   cursor: pointer;
 }
 
+.radio-container {
+  width: 28%;
+}
 /* The radio button indicator dot */
 .radio-container .custom-radio::before {
   content: "";
@@ -131,6 +134,7 @@
   margin-bottom: 2%;
   height: 40%;
   width: 80%;
+  overflow: scroll;
   padding: 20px;
   background-color: #ffffff;
   border: 2px solid #3498db; /* Border color */
