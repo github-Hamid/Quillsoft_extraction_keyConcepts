@@ -20,11 +20,17 @@ export default function KeyConcept() {
   async function handleSubmit(e) {
     e.preventDefault();
     console.log(values);
-    const result = await axios.post("http://localhost:3019/keyConcepts", {
-      text: values.text,
-      maximumNumOfWords: parseInt(values.maximumNumOfWords),
-      numOfKeywords: parseInt(values.numOfKeywords),
-    });
+    const result = await axios.post(
+      "http://localhost:3019/keyConcepts",
+      {
+        text: values.text,
+        maximumNumOfWords: parseInt(values.maximumNumOfWords),
+        numOfKeywords: parseInt(values.numOfKeywords),
+      },
+      {
+        withCredentials: true,
+      }
+    );
 
     setResponse(result.data);
   }
